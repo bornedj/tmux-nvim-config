@@ -15,8 +15,8 @@ require('navigator').setup({
             func = vim.lsp.buf.signature_help,
             desc = 'signature_help',
         },
-        { key = 'gd',    func = require('navigator.definition').definition, desc = 'definition' },
-        { key = 'gD',    func = vim.lsp.buf.declaration,                    desc = 'declaration' },
+        { key = 'gd', func = require('navigator.definition').definition, desc = 'definition' },
+        { key = 'gD', func = vim.lsp.buf.declaration,                    desc = 'declaration' },
 
         {
             key = 'gt',
@@ -29,7 +29,7 @@ require('navigator').setup({
             desc = 'definition_preview',
         },
         { key = '<Leader>re', func = 'rename()' },
-        { key = '<Leader>rn',  func = require('navigator.rename').rename, desc = 'rename' },
+        { key = '<Leader>rn', func = require('navigator.rename').rename, desc = 'rename' },
         { key = 'gi',         func = vim.lsp.buf.implementation,         desc = 'implementation' },
         {
             key = 'gG',
@@ -46,7 +46,7 @@ require('navigator').setup({
             func = vim.diagnostic.goto_prev,
             desc = 'prev diagnostics',
         },
-        { key = ']r',        func = require('navigator.treesitter').goto_next_usage, desc = 'goto_next_usage' },
+        { key = ']r', func = require('navigator.treesitter').goto_next_usage, desc = 'goto_next_usage' },
         {
             key = '[r',
             func = require('navigator.treesitter').goto_previous_usage,
