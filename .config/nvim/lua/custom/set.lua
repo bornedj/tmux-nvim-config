@@ -1,3 +1,4 @@
+vim.opt.timeoutlen = 100
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -28,4 +29,3 @@ vim.opt.updatetime = 50
 --remove auto single line comment
 
 vim.g.mapleader = " "
-
