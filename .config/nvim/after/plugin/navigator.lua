@@ -17,7 +17,6 @@ require('navigator').setup({
         },
         { key = 'gd', func = require('navigator.definition').definition, desc = 'definition' },
         { key = 'gD', func = vim.lsp.buf.declaration,                    desc = 'declaration' },
-
         {
             key = 'gt',
             func = vim.lsp.buf.type_definition,
@@ -28,7 +27,6 @@ require('navigator').setup({
             func = require('navigator.definition').definition_preview,
             desc = 'definition_preview',
         },
-        { key = '<Leader>re', func = 'rename()' },
         { key = '<Leader>rn', func = require('navigator.rename').rename, desc = 'rename' },
         { key = 'gi',         func = vim.lsp.buf.implementation,         desc = 'implementation' },
         {
