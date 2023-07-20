@@ -53,4 +53,7 @@ return require('packer').startup(function(use)
 			{ 'neovim/nvim-lspconfig' },
 		},
 	})
+	use('mfussenegger/nvim-dap')
+    use('David-Kunz/jester')
+    use('nvim-tree/nvim-web-devicons')
 end)
