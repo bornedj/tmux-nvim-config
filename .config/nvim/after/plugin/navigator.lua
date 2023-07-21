@@ -11,7 +11,7 @@ require('navigator').setup({
             desc = 'signature_help',
         },
         {
-            key = '<c-k>',
+            key = '<M-k>',
             func = vim.lsp.buf.signature_help,
             desc = 'signature_help',
         },
@@ -50,6 +50,7 @@ require('navigator').setup({
             func = require('navigator.treesitter').goto_previous_usage,
             desc = 'goto_previous_usage',
         },
+        { key = '<Leader>ff', func = vim.lsp.buf.format, mode = 'v', desc = 'format' },
     },
     lsp = {
         document_highlight = false,

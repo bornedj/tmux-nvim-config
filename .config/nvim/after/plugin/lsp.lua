@@ -8,10 +8,10 @@ lsp.ensure_installed({
   'angularls',
   'emmet_ls',
   'cssls',
-  'jdtls',
   'jsonls',
   'html',
   'pylsp',
+  'bashls',
 })
 
 lsp.nvim_workspace()

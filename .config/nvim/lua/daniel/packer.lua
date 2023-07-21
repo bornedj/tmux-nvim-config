@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
 		end
 	}
 	use('christoomey/vim-tmux-navigator')
-	-- use('mfussenegger/nvim-jdtls')
+	use('mfussenegger/nvim-jdtls')
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
