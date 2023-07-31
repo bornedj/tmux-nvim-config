@@ -7,7 +7,11 @@ local config = {
                 runtimes = {
                     -- {
                     --     name = "JavaSE-8",
-                    --     path = "/usr/lib/jvm/java-8-openjdk-amd64/"
+                    --     path = "/usr/lib/jvm/java-8-openjdk-amd64/bin/java"
+                    -- },
+                    -- {
+                    --     name = "JavaSE-17",
+                    --     path = "/usr/lib/jvm/java-17-openjdk-amd64/bin/java"
                     -- },
                     {
                         name = "JavaSE-17",
