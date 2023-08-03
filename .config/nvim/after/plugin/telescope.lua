@@ -1,6 +1,9 @@
 require("telescope").setup {
     defaults = {
         path_display = { "truncate" },
+        vimgrep_arguments = {
+            '--hidden'
+        }
     }
 }
 local builtin = require('telescope.builtin')

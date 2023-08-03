@@ -20,39 +20,15 @@
 -- -- - https://github.com/wbthomason/packer.nvim for package management
 -- -- - https://github.com/mfussenegger/nvim-dap (for debugging)
 -- -------------------------------------------------------------------------------
--- local api = vim.api
+local api = vim.api
 -- local cmd = vim.cmd
 -- local map = vim.keymap.set
---
--- ----------------------------------
--- -- PLUGINS -----------------------
--- ----------------------------------
--- cmd([[packadd packer.nvim]])
--- require("packer").startup(function(use)
---   use({ "wbthomason/packer.nvim", opt = true })
---
---   use({
---     "hrsh7th/nvim-cmp",
---     requires = {
---       { "hrsh7th/cmp-nvim-lsp" },
---       { "hrsh7th/cmp-vsnip" },
---       { "hrsh7th/vim-vsnip" },
---     },
---   })
---   use({
---     "scalameta/nvim-metals",
---     requires = {
---       "nvim-lua/plenary.nvim",
---       "mfussenegger/nvim-dap",
---     },
---   })
--- end)
 
 ----------------------------------
 -- OPTIONS -----------------------
 ----------------------------------
 -- global
--- vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
+vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 
 -- -- commenting out mappings for now, relying on navigator integration
 -- -- LSP mappings
@@ -167,23 +143,24 @@
 ----------------------------------
 -- LSP Setup ---------------------
 ----------------------------------
--- local metals_config = require("metals").bare_config()
+local metals_config = require("metals").bare_config()
 
 -- Example of settings
--- metals_config.settings = {
---   showImplicitArguments = true,
---   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
--- }
+metals_config.settings = {
+  showImplicitArguments = true,
+  excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+  javaHome = '/usr/lib/jvm/java-1.17.0-openjdk-amd64/bin/java'
+}
 
 -- *READ THIS*
 -- I *highly* recommend setting statusBarProvider to true, however if you do,
 -- you *have* to have a setting to display this in your statusline or else
 -- you'll not see any messages from metals. There is more info in the help
 -- docs about this
--- metals_config.init_options.statusBarProvider = "on"
+metals_config.init_options.statusBarProvider = "on"
 
 -- Example if you are using cmp how to make sure the correct capabilities for snippets are set
--- metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
+metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- -- Debug settings if you're using nvim-dap
 -- local dap = require("dap")
@@ -213,15 +190,15 @@
 -- end
 
 -- Autocmd that will actually be in charging of starting the whole thing
--- local nvim_metals_group = api.nvim_create_augroup("nvim-metals", { clear = true })
--- api.nvim_create_autocmd("FileType", {
---   -- NOTE: You may or may not want java included here. You will need it if you
---   -- want basic Java support but it may also conflict if you are using
---   -- something like nvim-jdtls which also works on a java filetype autocmd.
---   pattern = { "scala", "sbt", },
---   callback = function()
---     require("metals").initialize_or_attach(metals_config)
---   end,
---   group = nvim_metals_group,
--- })
+local nvim_metals_group = api.nvim_create_augroup("nvim-metals", { clear = true })
+api.nvim_create_autocmd("FileType", {
+  -- NOTE: You may or may not want java included here. You will need it if you
+  -- want basic Java support but it may also conflict if you are using
+  -- something like nvim-jdtls which also works on a java filetype autocmd.
+  pattern = { "scala", "sbt", },
+  callback = function()
+    require("metals").initialize_or_attach(metals_config)
+  end,
+  group = nvim_metals_group,
+})
 
