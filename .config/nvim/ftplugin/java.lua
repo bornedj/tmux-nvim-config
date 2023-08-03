@@ -1,28 +1,28 @@
 local workspace_dir = '/mnt/c/Users/daniel.borne/.local/share/eclipse/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-
 local root_markers = { 'gradlew', '.git', 'mvnw', 'pom' }
-local root_dir = require('jdtls.setup').find_root(root_markers)
 
 local config = {
     cmd = {
+        '/usr/lib/jdtls/bin/jdtls',
         '/usr/lib/jvm/java-1.17.0-openjdk-amd64/bin/java',
         "-Declipse.application=org.eclipse.jdt.ls.core.id1",
         "-Dosgi.bundles.defaultStartLevel=4",
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-Xms512m",
-        "-Xmx2048m",
+        "-Xmx1g",
         "--add-modules=ALL-SYSTEM",
         "--add-opens",
         "java.base/java.util=ALL-UNNAMED",
         "--add-opens",
         "java.base/java.lang=ALL-UNNAMED",
-        '-configuration', '/usr/lib/jdtls/config_ss_linux',
+        '-configuration', '/usr/lib/jdtls/config_linux',
         '-jar', vim.fn.glob('/usr/lib/jdtls/plugins/org.eclipse.equinox.launcher_*.jar*'),
         '-data', workspace_dir
     },
-    root_dir = root_dir,
+
+    root_dir = require('jdtls.setup').find_root(root_markers),
+
     settings = {
         java = {
             configuration = {

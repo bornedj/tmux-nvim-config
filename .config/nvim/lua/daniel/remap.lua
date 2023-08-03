@@ -52,4 +52,13 @@ vim.keymap.set("n", "<leader>fp", function()
     vim.cmd(string.format("cd %s", startingDir))
 end)
 
+-- another wsl specific bind, used to remove ^M from files 
+-- that have hand windows carriages added to files
+vim.keymap.set("n", "<leader>ux", function()
+    vim.cmd("update")
+    vim.cmd("e ++ff=dos")
+    vim.cmd("setlocal ff=unix")
+    vim.cmd("w")
+end)
+
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

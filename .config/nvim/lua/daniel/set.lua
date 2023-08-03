@@ -1,4 +1,4 @@
-vim.opt.timeoutlen = 1000
+vim.opt.timeoutlen = 2000
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
