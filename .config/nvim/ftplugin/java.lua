@@ -28,7 +28,7 @@ local config = {
             configuration = {
                 runtimes = {
                     {
-                        name = "JavaSE-8",
+                        name = "JavaSE-1.8",
                         path = "/usr/lib/jvm/java-8-openjdk-amd64/"
                     },
                     {
