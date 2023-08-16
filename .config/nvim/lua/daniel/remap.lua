@@ -7,6 +7,8 @@ vim.keymap.set("n", "<leader>Pv", "<cmd> Sex! <CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set("n", "<M-x>", "<C-x>")
+
 vim.keymap.set("n", "J", "mzj`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -53,7 +55,7 @@ vim.keymap.set("n", "<leader>fp", function()
 end)
 
 -- another wsl specific bind, used to remove ^M from files 
--- that have hand windows carriages added to files
+-- that have had windows carriages added to files
 vim.keymap.set("n", "<leader>ux", function()
     vim.cmd("update")
     vim.cmd("e ++ff=dos")

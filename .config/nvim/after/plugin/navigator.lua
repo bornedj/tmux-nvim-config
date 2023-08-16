@@ -54,6 +54,6 @@ require('navigator').setup({
     },
     lsp = {
         document_highlight = false,
-        format_on_save = false
-    }
+        format_on_save = false,
+    },
 })
