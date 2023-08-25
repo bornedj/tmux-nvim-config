@@ -54,6 +54,14 @@ vim.keymap.set("n", "<leader>fp", function()
     vim.cmd(string.format("cd %s", startingDir))
 end)
 
+-- command to open a file explorer in the location of the current buffer
+vim.keymap.set("n", "<leader>fe", function()
+    local startingDir = vim.fn.getcwd()
+    vim.cmd("cd %:h")
+    vim.cmd("!explorer.exe .")
+    vim.cmd(string.format("cd %s", startingDir))
+end)
+
 -- another wsl specific bind, used to remove ^M from files 
 -- that have had windows carriages added to files
 vim.keymap.set("n", "<leader>ux", function()
