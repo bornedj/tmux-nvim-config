@@ -10,7 +10,8 @@ lsp.ensure_installed({
     'cssls',
     'jsonls',
     'html',
-    'pylsp',
+    -- 'pylsp',
+    'pyright',
     'bashls',
 })
 
