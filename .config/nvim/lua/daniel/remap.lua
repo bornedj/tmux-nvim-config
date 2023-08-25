@@ -62,6 +62,15 @@ vim.keymap.set("n", "<leader>fe", function()
     vim.cmd(string.format("cd %s", startingDir))
 end)
 
+-- open windows git bash and cd into the dir of the current buffer
+vim.keymap.set("n", "<leader>gb", function()
+    local startingDir = vim.fn.getcwd()
+    vim.cmd("cd %:h")
+    vim.cmd("!/mnt/c/Program\\ Files/Git/git-bash.exe --cd=.")
+    vim.cmd(string.format("cd %s", startingDir))
+end)
+
+
 -- another wsl specific bind, used to remove ^M from files 
 -- that have had windows carriages added to files
 vim.keymap.set("n", "<leader>ux", function()
