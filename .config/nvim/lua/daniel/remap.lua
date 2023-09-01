@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader>Y', "\"+Y")
 vim.keymap.set("n", "Q", "<nop>")
 
 --tmux stuff
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer.sh<CR>")
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
@@ -66,7 +66,7 @@ end)
 vim.keymap.set("n", "<leader>gb", function()
     local startingDir = vim.fn.getcwd()
     vim.cmd("cd %:h")
-    vim.cmd("!/mnt/c/Program\\ Files/Git/git-bash.exe --cd=.")
+    vim.cmd("silent !/mnt/c/Program\\ Files/Git/git-bash.exe --cd=.")
     vim.cmd(string.format("cd %s", startingDir))
 end)
 
