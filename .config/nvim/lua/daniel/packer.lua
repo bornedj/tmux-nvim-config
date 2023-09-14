@@ -8,8 +8,10 @@ return require('packer').startup(function(use)
         -- or				, branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use {"rebelot/kanagawa.nvim"}
     use { "catppuccin/nvim", as = "catppuccin" }
     use({'rose-pine/neovim', as = 'rose-pine'})
+    use({ 'rmehri01/onenord.nvim', as = "onenord"})
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')

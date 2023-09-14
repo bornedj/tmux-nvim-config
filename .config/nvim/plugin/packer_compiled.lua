@@ -115,6 +115,11 @@ _G.packer_plugins = {
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/jester",
     url = "https://github.com/David-Kunz/jester"
   },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -176,6 +181,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  onenord = {
+    loaded = true,
+    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/onenord",
+    url = "https://github.com/rmehri01/onenord.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
