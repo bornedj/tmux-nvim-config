@@ -57,7 +57,7 @@ config['init_options'] = {
 
 config['on_attach'] = function ()
     print("starting nvim dap")
-    require('jdtls.dap').setup_dap_main_class_configs()
+    -- require('jdtls.dap').setup_dap_main_class_configs()
     require('jdtls').setup_dap({ hotcodereplace = 'auto'})
     --breakpoints
     vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
@@ -90,8 +90,9 @@ config['on_attach'] = function ()
     end)
 
     --help
-    vim.keymap.set('n', '<Leader>lb', "<cmd> Telescope dap list_breakpoints<cr>")
-    vim.keymap.set('n', '<Leader>dch', "<cmd> Telescope dap commands<cr>")
+    -- need to install additional plugin https://github.com/nvim-telescope/telescope-dap.nvim. Trying without it first
+    -- vim.keymap.set('n', '<Leader>lb', "<cmd> Telescope dap list_breakpoints<cr>")
+    -- vim.keymap.set('n', '<Leader>dch', "<cmd> Telescope dap commands<cr>")
 end
 
 
