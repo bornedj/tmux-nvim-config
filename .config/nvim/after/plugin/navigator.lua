@@ -55,5 +55,11 @@ require('navigator').setup({
     lsp = {
         document_highlight = false,
         format_on_save = false,
+        jdtls = {
+            cmd = {"/usr/lib/jdtls/bin/jdtls"}
+        }
+        -- servers = {
+        --     'jdtls'
+        -- }
     },
 })

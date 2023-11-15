@@ -84,3 +84,6 @@ vim.keymap.set("n", "<leader>ln", function()
     vim.cmd("set number")
     vim.cmd("set rnu!")
 end)
+
+-- copy the file name to the unamed register
+vim.keymap.set("n", "<leader>cfn", '<cmd>silent let @" = expand("%:t")<CR>')
