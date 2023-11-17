@@ -100,11 +100,6 @@ _G.packer_plugins = {
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  ["guihua.lua"] = {
-    loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/guihua.lua",
-    url = "https://github.com/ray-x/guihua.lua"
-  },
   harpoon = {
     loaded = true,
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -141,11 +136,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/daniel/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["navigator.lua"] = {
-    loaded = true,
-    path = "/home/daniel/.local/share/nvim/site/pack/packer/start/navigator.lua",
-    url = "https://github.com/ray-x/navigator.lua"
   },
   ["nvim-cmp"] = {
     loaded = true,

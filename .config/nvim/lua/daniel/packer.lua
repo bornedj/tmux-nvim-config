@@ -49,13 +49,13 @@ return require('packer').startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
     })
-    use({
-        'ray-x/navigator.lua',
-        requires = {
-            { 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
-            { 'neovim/nvim-lspconfig' },
-        },
-    })
+    -- use({
+    --     'ray-x/navigator.lua',
+    --     requires = {
+    --         { 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
+    --         { 'neovim/nvim-lspconfig' },
+    --     },
+    -- })
     use('mfussenegger/nvim-dap')
     use('David-Kunz/jester')
     use('nvim-tree/nvim-web-devicons')
