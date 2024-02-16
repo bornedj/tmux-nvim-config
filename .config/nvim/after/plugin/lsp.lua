@@ -44,8 +44,58 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+require('lspconfig').eslint.setup{
+    settings = {
+        format = false
+    }
+}
+
+require('lspconfig').tsserver.setup{
+  filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "javascript.mjs" }
+}
+
+-- disableing pycodestyle
+-- require 'lspconfig'.pylsp.setup {
+--     on_attach = function(client, bufnr)
+--         print('hello pylsp')
+--     end,
+--     -- on_attach = lsp.on_attach(function(client, bufnr)
+--     --     print('hello pylsp')
+--     -- end),
+--     settings = {
+--         pylsp = {
+--             plugins = {
+--                 pycodestyle = {
+--                     enabled = false
+--                 },
+--                 pylint = {
+--                     enabled = false
+--                 }
+--             }
+--         }
+--     }
+-- }
+
+-- lsp.configure('pylsp', {
+--     single_file_support = false,
+--     on_attach = function(client, bufnr)
+--         print('hello pylsp')
+--     end,
+--     settings = {
+--         pylsp = {
+--             plugins = {
+--                 pycodestyle = {
+--                     enabled = false,
+--                     ignore = { 'E302' }
+--                 }
+--             }
+--         }
+--     }
+-- })
+
 lsp.setup()

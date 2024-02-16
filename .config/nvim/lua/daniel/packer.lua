@@ -24,12 +24,9 @@ return require('packer').startup(function(use)
             { 'neovim/nvim-lspconfig' },
             {
                 'williamboman/mason.nvim',
-                -- run = function()
-                --     pcall(vim.cmd, 'MasonUpdate')
-                -- end,
             },
             { 'williamboman/mason-lspconfig.nvim' },
-            -- autocompletion
+            -- autocompletiohttps://github.com/epwalsh/obsidian.nvim#using-packernvimn
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
@@ -46,20 +43,12 @@ return require('packer').startup(function(use)
     use({
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
-        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } vim.g.mkdp_theme = "light" end,
         ft = { "markdown" },
     })
-    -- use({
-    --     'ray-x/navigator.lua',
-    --     requires = {
-    --         { 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
-    --         { 'neovim/nvim-lspconfig' },
-    --     },
-    -- })
     use('mfussenegger/nvim-dap')
     use('David-Kunz/jester')
     use('nvim-tree/nvim-web-devicons')
-    -- use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
     use({
         "hrsh7th/nvim-cmp",
         requires = {

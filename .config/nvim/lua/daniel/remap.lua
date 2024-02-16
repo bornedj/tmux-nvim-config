@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("i", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>Pv", "<cmd> Sex! <CR>")
+vim.keymap.set("n", "<leader>pV", "<cmd> Sex! <CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -21,18 +21,21 @@ vim.keymap.set('x', '<leader>p', "\"_dp")
 -- clipboard
 vim.keymap.set('n', '<leader>y', "\"+y")
 vim.keymap.set('v', '<leader>y', "\"+y")
-vim.keymap.set('n', '<leader>Y', "\"+Y")
+vim.keymap.set('n', '<leader>Y', "\"*y")
+vim.keymap.set('v', '<leader>Y', "\"*y")
 
 vim.keymap.set("n", "Q", "<nop>")
 
 --tmux stuff
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer.sh<CR>")
 vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format({formatting_options = {tabSize = 4}})
+    -- vim.lsp.buf.format({formatting_options = {tabSize = 4}})
+    vim.lsp.buf.format({formatting_options = {tabSize = 2}})
 end)
 
 vim.keymap.set("v", "<leader>f", function()
-    vim.lsp.buf.format({formatting_options = {tabSize = 4}})
+    -- vim.lsp.buf.format({formatting_options = {tabSize = 4}})
+    vim.lsp.buf.format({formatting_options = {tabSize = 2}})
 end)
 
 -- vim.keymap.set("n", "<a-j>", "<cmd>cnext<CR>zz")
@@ -46,21 +49,11 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
--- command to open a file with explorer.exe so I can open files with their native
--- windows default program. I.E. open html files in windows chrome
-vim.keymap.set("n", "<leader>fp", function()
-    local startingDir = vim.fn.getcwd()
-    local explorer = string.format("!explorer.exe %s", vim.fn.expand('%:t'))
-    vim.cmd("cd %:h")
-    vim.cmd(explorer)
-    vim.cmd(string.format("cd %s", startingDir))
-end)
-
 -- command to open a file explorer in the location of the current buffer
 vim.keymap.set("n", "<leader>fe", function()
     local startingDir = vim.fn.getcwd()
     vim.cmd("cd %:h")
-    vim.cmd("!explorer.exe .")
+    vim.cmd("silent !explorer.exe .")
     vim.cmd(string.format("cd %s", startingDir))
 end)
 
@@ -89,3 +82,9 @@ end)
 
 -- copy the file name to the unamed register
 vim.keymap.set("n", "<leader>cfn", '<cmd>silent let @" = expand("%:t")<CR>')
+
+-- copy current buffer file path to the system clipboard
+vim.keymap.set("n", "<leader>cfp", '<cmd>silent let @+ = expand("%:p")<CR>')
+
+-- copy current buffer file path to the system clipboard
+vim.keymap.set("n", "<leader>cfrp", '<cmd>silent let @+ = expand("%")<CR>')
